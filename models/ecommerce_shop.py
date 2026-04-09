@@ -5,23 +5,33 @@ class EcommerceShop(models.Model):
     _description = 'Ecommerce Shop'
 
     name = fields.Char(required=True)
+    active = fields.Boolean(default=True)
+
     platform = fields.Selection([
         ('shopee', 'Shopee'),
         ('lazada', 'Lazada'),
         ('tiktok', 'TikTok'),
     ], required=True)
 
-    # Shopee
-    partner_id = fields.Char()
-    partner_key = fields.Char()
-    shop_id = fields.Char()
+    # =======================
+    # SHOPEE
+    # =======================
+    partner_id = fields.Char("Shopee Partner ID")
+    partner_key = fields.Char("Shopee Partner Key")
+    shop_id = fields.Char("Shopee Shop ID")
+    access_token = fields.Text("Shopee Access Token")
 
-    # Lazada
-    app_key = fields.Char()
-    app_secret = fields.Char()
+    # =======================
+    # LAZADA
+    # =======================
+    app_key = fields.Char("Lazada App Key")
+    app_secret = fields.Char("Lazada App Secret")
+    lazada_access_token = fields.Text("Lazada Access Token")
 
-    # TikTok
-    tiktok_app_key = fields.Char()
-    tiktok_app_secret = fields.Char()
-
-    active = fields.Boolean(default=True)
+    # =======================
+    # TIKTOK
+    # =======================
+    tiktok_app_key = fields.Char("TikTok App Key")
+    tiktok_app_secret = fields.Char("TikTok App Secret")
+    tiktok_access_token = fields.Text("TikTok Access Token")
+    shop_cipher = fields.Char("TikTok Shop Cipher")
