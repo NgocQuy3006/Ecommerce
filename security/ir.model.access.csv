@@ -1,0 +1,3 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_ecommerce_service,access_ecommerce_service,model_leo_ecommerce_service,,1,0,0,0
+access_ecommerce_shop,access_ecommerce_shop,model_leo_ecommerce_shop,,1,1,1,1

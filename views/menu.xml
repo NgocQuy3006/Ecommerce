@@ -1,0 +1,16 @@
+<odoo>
+
+    <menuitem id="menu_ecommerce_root" name="Ecommerce"/>
+
+    <menuitem id="menu_ecommerce_shop"
+              name="Shops"
+              parent="menu_ecommerce_root"
+              action="action_ecommerce_shop"/>
+
+    <record id="action_ecommerce_shop" model="ir.actions.act_window">
+        <field name="name">Shops</field>
+        <field name="res_model">leo.ecommerce.shop</field>
+        <field name="view_mode">list,form</field>
+    </record>
+
+</odoo>

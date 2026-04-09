@@ -1,0 +1,63 @@
+<odoo>
+
+
+    <!-- ACTION (THÊM ĐOẠN NÀY) -->
+    <record id="action_ecommerce_shop" model="ir.actions.act_window">
+        <field name="name">Ecommerce Shops</field>
+        <field name="res_model">leo.ecommerce.shop</field>
+        <field name="view_mode">list,form</field>
+    </record>
+
+    <!-- LIST VIEW -->
+    <record id="view_ecommerce_shop_list" model="ir.ui.view">
+        <field name="name">leo.ecommerce.shop.list</field>
+        <field name="model">leo.ecommerce.shop</field>
+        <field name="arch" type="xml">
+            <list>
+                <field name="name"/>
+                <field name="platform"/>
+                <field name="shop_id"/>
+                <field name="active"/>
+            </list>
+        </field>
+    </record>
+
+    <!-- FORM VIEW -->
+    <record id="view_ecommerce_shop_form" model="ir.ui.view">
+        <field name="name">leo.ecommerce.shop.form</field>
+        <field name="model">leo.ecommerce.shop</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+
+                    <group>
+                        <field name="name"/>
+                        <field name="platform"/>
+                        <field name="active"/>
+                    </group>
+
+                    <!-- SHOPEE -->
+                    <group string="Shopee Config" invisible="platform != 'shopee'">
+                        <field name="partner_id"/>
+                        <field name="partner_key"/>
+                        <field name="shop_id"/>
+                    </group>
+
+                    <!-- LAZADA -->
+                    <group string="Lazada Config" invisible="platform != 'lazada'">
+                        <field name="app_key"/>
+                        <field name="app_secret"/>
+                    </group>
+
+                    <!-- TIKTOK -->
+                    <group string="TikTok Config" invisible="platform != 'tiktok'">
+                        <field name="tiktok_app_key"/>
+                        <field name="tiktok_app_secret"/>
+                    </group>
+
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+</odoo>
