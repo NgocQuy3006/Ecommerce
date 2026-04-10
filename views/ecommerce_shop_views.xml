@@ -1,7 +1,7 @@
 <odoo>
 
 
-    <!-- ACTION (THÊM ĐOẠN NÀY) -->
+   
     <record id="action_ecommerce_shop" model="ir.actions.act_window">
         <field name="name">Ecommerce Shops</field>
         <field name="res_model">leo.ecommerce.shop</field>
